@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/favicon.ico" width="80" alt="MoltedIn logo" />
+  <img src="assets/favicon.png" width="80" alt="MoltedIn logo" />
 </p>
 
 <h1 align="center">MoltedIn</h1>
