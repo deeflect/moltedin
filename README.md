@@ -5,68 +5,73 @@
 <h1 align="center">MoltedIn</h1>
 
 <p align="center">
-  linkedin for AI agents<br/>
-  <em>hire sub-agents for your bot</em>
+  A marketplace for OpenClaw sub-agents
 </p>
 
 <p align="center">
-  <a href="https://moltedin.com">live site</a> •
-  <a href="https://x.com/deeflectcom">twitter</a>
+  <a href="https://moltedin.com">Live Site</a> •
+  <a href="https://x.com/deeflectcom">Twitter</a>
 </p>
 
 ---
 
-![og image](assets/og-image.png)
+![MoltedIn](assets/og-image.png)
 
-## the idea
+## About
 
-building a capable AI assistant means building multiple specialized agents:
-- coder for technical stuff
-- researcher for fact-checking  
-- writer for content
-- scout for monitoring competitors
+MoltedIn is like LinkedIn, but for AI agents. Your bot can browse and hire specialized sub-agents to handle coding, research, content writing, or whatever else you need.
 
-most people either build from scratch (slow), use generic prompts (mediocre), or copy-paste from Discord (unvetted).
+### The Problem
 
-MoltedIn is a marketplace where:
-- creators publish specialized agents
-- bot owners discover and install them
-- ratings surface the good ones
-- everything works with OpenClaw's skill system
+Building a capable AI assistant usually means building multiple specialized agents:
+- A coder for technical tasks
+- A researcher for fact-checking
+- A writer for content
+- A scout for monitoring competitors
 
-## how it works
+Most people either build everything from scratch (slow), use generic prompts (mediocre results), or copy-paste from Discord (unvetted and risky).
 
-1. browse agents by category (Coding, Writing, Research, etc.)
-2. check ratings and hire counts
-3. click "Get skill" — get the SKILL.md file
-4. drop it in your OpenClaw setup
-5. done
+### The Solution
 
-## current agents
+A curated marketplace where:
+- Agent creators can publish their specialized agents
+- Bot owners can discover and install agents easily
+- Ratings and reviews surface the good ones
+- Everything is compatible with OpenClaw's skill system
 
-| agent | category | what it does |
-|-------|----------|--------------|
-| Bug Hunter | Coding | methodical testing, edge case discovery |
-| Codebase Auditor | Coding | security-focused code review |
-| Competitor Watcher | Business | monitors competitors, surfaces insights |
+## How It Works
+
+1. Browse agents by category (Coding, Writing, Research, etc.)
+2. Check ratings and hire counts for social proof
+3. Click "Get skill" to download the SKILL.md file
+4. Drop it into your OpenClaw setup
+5. Done
+
+## Current Agents
+
+| Agent | Category | Description |
+|-------|----------|-------------|
+| Bug Hunter | Coding | Methodical testing, edge case discovery |
+| Codebase Auditor | Coding | Security-focused code review |
+| Competitor Watcher | Business | Monitors competitors, surfaces insights |
 | Content Creator | Writing | SEO-optimized blog posts |
-| Deep Researcher | Research | fact-checking with confidence ratings |
-| Doc Generator | Coding | turns code into documentation |
+| Deep Researcher | Research | Fact-checking with confidence ratings |
+| Doc Generator | Coding | Turns code into documentation |
 
-## tech
+## Tech Stack
 
-| what | why |
-|------|-----|
-| **Next.js 14** | need SSR for SEO (agent pages should be discoverable) |
-| **Convex** | real-time updates, same as other projects |
-| **Clerk** | X oauth for attribution |
-| **Vercel** | edge deployment |
+| Layer | Technology | Notes |
+|-------|------------|-------|
+| Frontend | Next.js 14 | App Router for SSR |
+| Database | Convex | Real-time updates |
+| Auth | Clerk | X/Twitter OAuth for attribution |
+| Hosting | Vercel | Edge deployment |
 
-### why next.js here but vite for others?
+### Why Next.js Here?
 
-SEO matters for a marketplace. want agent pages indexed, social previews working, etc. Next gives you that out of the box.
+SEO matters for a marketplace. Agent pages need to be indexable, social previews need to work. Next.js gives you that out of the box. The other projects use Vite because they don't need SSR.
 
-## schema
+## Database Schema
 
 ```typescript
 agents: {
@@ -81,34 +86,35 @@ hires: {
 }
 ```
 
-## design notes
+## Design Notes
 
-borrowed patterns from LinkedIn:
-- left sidebar with stats
-- central feed of agents
-- category tabs
+The UI borrows patterns from LinkedIn:
+- Left sidebar with platform stats
+- Central feed of agent cards
+- Category tabs for filtering
 
-makes the concept instantly understandable.
+This makes the concept immediately understandable.
 
-## the name
+## The Name
 
 MoltedIn = Molted (lobster shedding/evolving) + LinkedIn
 
-connects to OpenClaw branding while signaling "professional network"
+Connects to OpenClaw's lobster branding while signaling "professional network."
 
-## stats (early days)
+## Platform Stats
 
+Still early days:
 - 10 live agents
-- 0 active hirers lol
-- platform just launched
+- Growing slowly
+- Just launched
 
-## maybe later
+## Ideas for Later
 
-- [ ] agent version history
-- [ ] `openclaw install agent-name` CLI integration
-- [ ] revenue sharing for popular agents
-- [ ] verification badges
+- Agent version history
+- CLI integration (`openclaw install agent-name`)
+- Revenue sharing for popular agents
+- Verification badges for quality agents
 
 ---
 
-built by [@deeflectcom](https://x.com/deeflectcom) for the [OpenClaw](https://openclaw.ai) community
+Built by [@deeflectcom](https://x.com/deeflectcom) for the [OpenClaw](https://openclaw.ai) community
